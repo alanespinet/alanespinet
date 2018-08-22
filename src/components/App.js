@@ -2,8 +2,8 @@ import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import { Router, Route, Switch } from 'react-router-dom';
 
-import Home from '../screens/Home';
-import PageNotFound from '../screens/PageNotFound';
+import Home from './screens/Home';
+import PageNotFound from './screens/PageNotFound';
 
 export const history = createHistory();
 

@@ -81,7 +81,7 @@
         }
 
         p {
-          color: $white;
+          color: $light-gray;
           font-size: 2.4rem;
           font-weight: 300;
           padding-bottom: 10rem;
@@ -111,10 +111,115 @@
         }
 
         a {
-          color: $white;
+          color: $light-gray;
           font-size: 3.2rem;
         }
       }
+    }
+  }
+
+  &__about {
+    padding: 6rem 0 10rem;
+    position: relative;
+
+    &__animated-background {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+
+      &__box {
+        height: 100%;
+
+        img {
+          border-radius: 0 !important;
+          height: 100% !important;
+          width: auto !important;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+
+      }
+    }
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+
+    img {
+      border-radius: 100%;
+      width: 140px;
+      height: 140px;
+    }
+
+    p {
+      margin-top: 3rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    a {
+      color: $teal;
+
+      &:hover {
+        color: darken( $teal, 10% );
+      }
+    }
+
+    a.learn-more-link {
+      text-align: right;
+      display: block;
+      margin-top: 4rem;
+    }
+
+    &__socials {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90px;
+        margin-top: 1.5rem;
+        margin-left: 2.3rem;
+      }
+
+      &__link {
+        font-size: 2.4rem;
+        color: $dark-gray;
+
+        &--mail {
+          font-size: 2.6rem;
+          // position: relative;
+          // top: -1px;
+        }
+      }
+    }
+  }
+
+  &__work {
+    height: 1000px;
+    background-color: $teal;
+    padding: 6rem 0;
+    overflow: hidden;
+    position: relative;
+
+    -moz-transform: skewY(3deg);
+    -webkit-transform: skewY(3deg);
+    transform: skewY(3deg);
+
+    & > * {
+      -moz-transform: skewY(-3deg);
+      -webkit-transform: skewY(-3deg);
+      transform: skewY(-3deg);
+    }
+
+    h2 {
+      color: $light-gray;
     }
   }
 }

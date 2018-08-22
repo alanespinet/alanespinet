@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Video from '../../components/common/Video';
+import Video from '../../common/Video';
 
-import AHomeHero from '../../animations/components/AHomeHero.js';
+import AHomeHero from '../../../animations/components/AHomeHero';
 
 class HomeHero extends Component {
 

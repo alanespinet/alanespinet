@@ -27,9 +27,9 @@ export default () => {
   t1.from(wrapper, 1, { opacity: 0, delay: 0.5 });
   t1.from(shadow, 1, { opacity: 0 }, "-=0.7");
   t1.from(headline, 2, { opacity: 0, scale: 1.4, ease: Elastic.easeOut }, "-=0.3");
-  t1.staggerFrom( letters, 1, { opacity: 0, color: "#008080", ease: Elastic.easeOut }, .03, "-=1");
+  t1.staggerFrom( letters, 1, { opacity: 0, color: "#008080", ease: Elastic.easeOut }, .02, "-=1");
 
-  let t2 = new TimelineMax({ repeat: -1, repeatDelay: 1, delay: 10 });
+  let t2 = new TimelineMax({ repeat: -1, repeatDelay: 1, delay: 7.5 });
   t2.staggerTo('.home__hero__overlay__down-arrow', .5, { opacity: 0.8, ease: Power2.easeOut }, 0.2);
   t2.staggerTo('.home__hero__overlay__down-arrow', .5, { opacity: 0, ease: Power2.easeOut }, 0.2, "-=.4");
 

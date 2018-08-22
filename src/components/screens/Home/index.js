@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import HomeHero from './HomeHero';
+import HomeAbout from './HomeAbout';
+import HomeWork from './HomeWork';
 
 class Home extends Component {
 
@@ -7,6 +10,8 @@ class Home extends Component {
     return (
       <div className="home page">
         <HomeHero />
+        <HomeAbout />
+        <HomeWork />
       </div>
     );
   }
