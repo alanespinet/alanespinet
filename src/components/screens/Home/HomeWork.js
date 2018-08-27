@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import AHomeWork from '../../../animations/components/AHomeWork.js';
+import AHomeWork from '../../../animations/components/AHomeWork';
+import ProjectsList from '../../common/ProjectsList';
 
 class HomeWork extends Component {
 
@@ -12,7 +13,7 @@ class HomeWork extends Component {
       <div className="home__work" id="home__work">
         <div className="container">
           <h2>My Work</h2>
-
+          <ProjectsList />
         </div>
       </div>
     );

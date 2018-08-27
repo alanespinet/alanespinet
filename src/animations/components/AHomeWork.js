@@ -9,7 +9,7 @@ export default () => {
   aHomeWork_offsetTop = document.getElementById('home__work').offsetTop;
   aHomeWork_offsetTl = new TimelineMax({ paused: true });
 
-  aHomeWork_offsetTl.from('#home__work h2', 1, { opacity: 0, delay: 1 });
+  
 }
 
 const aHomeWork_showWhenScroll = e => {
