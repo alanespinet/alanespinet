@@ -8,8 +8,6 @@ let aHomeWork_offsetTl;
 export default () => {
   aHomeWork_offsetTop = document.getElementById('home__work').offsetTop;
   aHomeWork_offsetTl = new TimelineMax({ paused: true });
-
-  
 }
 
 const aHomeWork_showWhenScroll = e => {

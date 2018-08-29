@@ -41,6 +41,10 @@ a {
   transition: all .3s ease;
 }
 
+.red {
+  color: $light-gray;
+}
+
 .page {
   min-height: calc(100vh - 30px);
 }
@@ -48,4 +52,17 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.fw-normal {
+  font-weight: normal;
+}
+
+.green-bg-link {
+  color: gold;
+  transition: all .3s ease;
+}
+
+.green-bg-link:hover {
+  color: lighten(gold, 10%);
 }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import HomeHero from './HomeHero';
 import HomeAbout from './HomeAbout';
 import HomeWork from './HomeWork';
+import HomeContact from './HomeContact';
 
 class Home extends Component {
 
@@ -12,6 +13,7 @@ class Home extends Component {
         <HomeHero />
         <HomeAbout />
         <HomeWork />
+        <HomeContact />
       </div>
     );
   }

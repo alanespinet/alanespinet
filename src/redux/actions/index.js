@@ -1,0 +1,1 @@
+export { setPropValue } from './quickContact';

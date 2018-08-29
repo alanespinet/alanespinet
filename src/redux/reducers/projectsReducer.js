@@ -19,24 +19,6 @@ const defaultState = {
       image: 'ryder_trauma_center.jpg',
       liveUrl: 'http://rydertraumacenter.org/'
     }, {
-      key: 'the-retreat-orlando',
-      title: 'The Retreat - Orlando',
-      type: 'Website',
-      technologies: ['PHP', 'Wordpress', 'JavaScript', 'CSS'],
-      keywords: ['Wordpress', 'CMS'],
-      template: '',
-      image: 'the_retreat_orlando.jpg',
-      liveUrl: 'http://retreat-orlando.com/'
-    }, {
-      key: 'rubik-algs-guide',
-      title: 'Rubik\'s Algorithms Guide',
-      type: 'Web Application',
-      technologies: ['React.js', 'Express.js', 'Node.js'],
-      keywords: ['JavaScript', 'Application', 'Web Application', 'ES6'],
-      template: '',
-      image: 'rubik_algs_guide.jpg',
-      liveUrl: 'http://rubikalgsguide.herokuapp.com/'
-    }, {
       key: 'forest-ninja',
       title: 'Forest Ninja vs Aliens',
       type: 'Videogame',
@@ -45,14 +27,6 @@ const defaultState = {
       template: '',
       image: 'forest_ninja_vs_aliens.jpg',
       liveUrl: ''
-    }, {
-      key: 'kaufman-rossin',
-      title: 'Kaufman Rossin',
-      type: 'Website',
-      technologies: ['PHP', 'Wordpress', 'JavaScript', 'CSS'],
-      keywords: ['Wordpress', 'CMS'],
-      image: 'kaufman_rossin.jpg',
-      liveUrl: 'https://kaufmanrossin.com/'
     }
   ]
 };
