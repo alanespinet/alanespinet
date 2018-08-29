@@ -55,7 +55,7 @@
     }
 
     &:hover &__front {
-      background-color: darken($teal, 10%) !important;
+      background-color: rgba( $dark-gray, .8 ) !important;
       letter-spacing: 1px;
     }
 
