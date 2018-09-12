@@ -660,6 +660,15 @@
     width: 70%;
     margin: 0 auto;
   }
+
+  .home__work .project-list__single-project__overlay,
+  .home__work .project-list__single-project__overlay > * {
+    opacity: 1;
+  }
+
+  .home__work .project-list__single-project__overlay > * {
+    top: 0;
+  }
 }
 
 @include responsive-phone-small {
