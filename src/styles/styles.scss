@@ -1,5 +1,8 @@
+@import './mixins/Responsive';
 @import './base/settings';
 @import './base/base';
+
+
 @import './components/Home';
 @import './components/Button';
 @import './components/Footer';

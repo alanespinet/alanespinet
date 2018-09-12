@@ -18,9 +18,8 @@ class HomeHero extends Component {
               <div className="home__hero__overlay__website-title__shadow"></div>
 
               <div className="home__hero__overlay__website-title__content-wrapper">
-                <h1>Alan Espinet</h1>
+                <h1>Alan Espinet <span>web and videogames developer</span></h1>
                 <div className="home__hero__overlay__website-title__underline"></div>
-                <p>web and videogames developer</p>
               </div>
             </div>
 
@@ -49,6 +48,8 @@ class HomeHero extends Component {
           src="/videos/video-hero.mp4"
           width="100%"
         />
+
+        <div className="home__hero__image img-responsive"></div>
       </div>
     );
   }

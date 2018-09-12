@@ -140,3 +140,18 @@
     }
   }
 }
+
+
+@include responsive-phone-big {
+  .header {
+    &__button {
+      top: 15px;
+      right: 15px;
+    }
+
+    &__menu {
+      right: 27px;
+      top: 27px;
+    }
+  }
+}

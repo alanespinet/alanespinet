@@ -7,7 +7,7 @@ import React from 'react';
  *    prop: height -> height of the video
  */
 
-
+ 
 const Video = props => (
   <video width={props.width} autoPlay muted loop poster={props.poster}>
     <source src={props.src} type="video/mp4" />

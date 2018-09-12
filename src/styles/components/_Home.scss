@@ -6,6 +6,8 @@
 
     video { display: block; }
 
+    &__image { display: none; }
+
     &__overlay {
       position: absolute;
       top: 0;
@@ -36,6 +38,12 @@
           transform: skewX(30deg);
         }
 
+        h1 span {
+          font-size: 1.8rem;
+          display: block;
+          text-align: right;
+        }
+
         &__shadow {
           position: absolute;
           width: 100%;
@@ -59,6 +67,10 @@
         &__underline {
           height: 2px;
           background-color: $dark-gray;
+          position: absolute;
+          left: 0;
+          bottom: 20px;
+          width: 100%;
         }
 
         p {
@@ -67,6 +79,8 @@
           font-size: 2.4rem;
           text-align: right;
         }
+
+        &--mobile { display: none; }
       }
 
       &__website-presentation {
@@ -85,6 +99,7 @@
           font-size: 2.4rem;
           font-weight: 300;
           padding-bottom: 10rem;
+          line-height: 1.2;
         }
       }
 
@@ -138,6 +153,7 @@
           position: absolute;
           top: 0;
           right: 0;
+          opacity: .25;
         }
 
 
@@ -206,7 +222,7 @@
         margin-top: 6rem;
 
         .button {
-          margin-right: 0;
+          margin-right: 20px;
           margin-left: auto;
         }
       }
@@ -243,7 +259,7 @@
       top: 60px;
       right: 30px;
       width: 100px;
-      opacity: .2;
+      opacity: .1;
     }
 
     .project-list {
@@ -440,7 +456,7 @@
         textarea {
           height: 120px;
           resize: none;
-          overflow-y: scroll;
+          overflow-y: auto;
         }
 
         input:focus,
@@ -458,5 +474,218 @@
         }
       }
     }
+  }
+}
+
+@include responsive-fluid-closed(1200px, 1300px){
+  .home__hero {
+    &__overlay {
+      &__website-title {
+        left: 75px;
+        top: 60px;
+      }
+    }
+  }
+}
+
+@include responsive-fluid-closed(992px, 1199px){
+  .home__hero {
+    &__overlay {
+      &__website-title {
+        left: 45px;
+        top: 30px;
+      }
+
+      &__website-presentation p {
+        font-size: 1.8rem;
+        padding-bottom: 8rem;
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@include responsive-tablet {
+  .home {
+    &__hero {
+      video { display: none; }
+      &__overlay__website-title { left: 45px; }
+
+      &__image {
+        display: block;
+        height: 500px;
+        background-image: url('/images/home_hero_mobile.jpg');
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      &__overlay__website-presentation p {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .home__work .project-list__single-project {
+    height: 20rem;
+  }
+
+  .home__work .project-list__single-project__overlay h3 {
+    font-size: 2.4rem;
+  }
+
+  .home__work__portfolio-buttons__button-wrapper .button {
+    width: 200px;
+  }
+
+  .home__work__portfolio-buttons {
+    padding: 0 20px;
+  }
+
+  .home__work {
+    padding-bottom: 10rem;
+  }
+}
+
+@include responsive-phone-big {
+  .home .home__hero .home__hero__overlay__website-title {
+    -moz-transform: skewX(0);
+    -webkit-transform: skewX(0);
+    transform: skewX(0);
+
+    left: 0;
+    width: calc(100% - 15px);
+    background-color: rgba(0,0,0,0);
+
+    h1 {
+      color: $white;
+    }
+  }
+
+  .home__hero__overlay__website-title__underline {
+    background-color: $white;
+  }
+
+  .home .home__hero .home__hero__overlay__website-title__shadow {
+    left: 15px;
+    top: 15px;
+    background-color: rgba(0,0,0,0);
+  }
+
+  .home .home__hero .home__hero__overlay__website-title > * {
+    -moz-transform: skewX(0) !important;
+    -webkit-transform: skewX(0) !important;
+    transform: skewX(0) !important;
+  }
+
+  .home__about__animated-background__box img {
+    display: none;
+  }
+
+  .home__work .project-list__single-project {
+    flex-basis: 100%;
+  }
+
+  .project-list-wrapper .container {
+    padding-left: 0;
+  }
+
+  .home__work__portfolio-buttons {
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home__work__portfolio-buttons__button-wrapper {
+    flex-basis: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .home__work__portfolio-buttons__button-wrapper .button {
+    width: 240px;
+  }
+
+  .home__work__portfolio-buttons__button-wrapper:last-child {
+    margin-bottom: 0;
+  }
+
+  .home__work {
+    padding-bottom: 8rem;
+  }
+
+  .home__contact {
+    padding-top: 12rem;
+    padding-bottom: 25rem;
+  }
+
+  .home__contact__form-wrapper {
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+
+  .home__contact__control-row {
+    flex-wrap: wrap;
+  }
+
+  .home__contact__control-row__control-col--half {
+    flex-basis: 100%;
+  }
+
+  .home__contact__control-row__control-col--half:first-child {
+    margin-bottom: 2rem;
+  }
+
+  .home__contact__button-wrapper .button {
+    width: 200px;
+  }
+
+  .footer__front__content {
+    flex-wrap: wrap;
+  }
+
+  .footer__front__content__left,
+  .footer__front__content__right {
+    flex-basis: 100% !important;
+  }
+
+  .footer h2 {
+    font-size: 3rem;
+  }
+
+  .header__options ul a {
+    font-size: 2rem !important;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@include responsive-phone-small {
+  .home .home__hero .home__hero__overlay__website-title {
+    height: 110px;
+
+    h1 {
+      font-size: 3rem;
+
+      span {
+        font-size: 1.4rem;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  .home .home__hero .home__hero__overlay__website-title__content-wrapper {
+    margin: 0 15px 0 25px;
+  }
+
+  .home .home__hero .home__hero__overlay__website-title__underline {
+    top: 33px;
+  }
+
+  .home .home__hero .home__hero__overlay__website-presentation p {
+    font-size: 1.8rem;
+    padding-bottom: 8rem;
   }
 }

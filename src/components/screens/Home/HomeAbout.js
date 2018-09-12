@@ -26,7 +26,7 @@ class HomeAbout extends Component {
         <div className="home__about__content">
           <div className="container">
             <h2>About Me</h2>
-            <img src="https://via.placeholder.com/140x140" alt="placeholder image"/>
+            <img src="/images/alan.jpg" alt="placeholder image"/>
 
             <div className="home__about__socials">
               <ul>
