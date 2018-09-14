@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import AHomeWork from '../../../animations/components/AHomeWork';
 import ProjectsList from '../../common/ProjectsList';
 
 import Button from '../../common/Button';
 
 class HomeWork extends Component {
-
-  componentDidMount(){
-    AHomeWork();
-  }
-
+  
   onWebsitesPortfolioClick(e){
     e.preventDefault();
     console.log('websites portfolio');

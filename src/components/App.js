@@ -3,6 +3,8 @@ import createHistory from 'history/createBrowserHistory';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import Home from './screens/Home';
+import Work from './screens/Work';
+
 import PageNotFound from './screens/PageNotFound';
 import Footer from './common/Footer';
 import Header from './common/Header';
@@ -18,6 +20,7 @@ export default class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/work" component={Work} />
             <Route component={PageNotFound} />
           </Switch>
           <Footer />
