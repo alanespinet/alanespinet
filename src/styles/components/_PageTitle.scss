@@ -12,10 +12,18 @@
     letter-spacing: 2px;
     font-weight: 300;
     text-shadow: 2px 2px 2px rgba($white, .2);
+
+    @include responsive-phone-big {
+      font-size: 3rem;
+    }
   }
 
   &__big-letter {
     font-size: 8rem;
     text-decoration: overline;
+
+    @include responsive-phone-big {
+      font-size: 5rem;
+    }
   }
 }

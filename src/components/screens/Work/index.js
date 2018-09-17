@@ -9,7 +9,7 @@ class Work extends Component {
     return (
       <div className="work page">
         <PageHero heroImage="/images/work_background.jpg"title="My Work">
-          <h1><span className="page-title__big-letter">M</span>y <span className="page-title__big-letter">W</span>ork</h1>
+          <span className="page-title__big-letter">M</span>y <span className="page-title__big-letter">W</span>ork
         </PageHero>
 
         <WorkContent />

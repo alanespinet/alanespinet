@@ -12,6 +12,10 @@
   justify-content: center;
   align-items: center;
 
+  @include responsive-phone-big {
+    height: 30rem;
+  }
+
   &__overlay {
     background-color: rgba($teal, .9);
     position: absolute;

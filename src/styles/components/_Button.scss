@@ -125,4 +125,8 @@
     }
 
   }
+
+  @include responsive-phone-big {
+    width: 220px;
+  }
 }
