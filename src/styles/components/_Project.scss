@@ -1,0 +1,85 @@
+.project {
+  @include flex-sb-fs;
+  margin-bottom: 100px;
+  position: relative;
+
+  &__image {
+    flex-basis: 400px;
+
+    img {
+      box-shadow: 0 0 3px #999;
+    }
+  }
+
+  &__description {
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    flex-basis: calc(100% - 425px);
+
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .button {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+  }
+
+  @include responsive-ds-short {
+    &__image {
+      flex-basis: 500px;
+    }
+
+    &__content {
+      flex-basis: calc(100% - 525px);
+
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  @include responsive-tablet {
+    &__image {
+      flex-basis: 100%;
+    }
+
+    &__content {
+      flex-basis: 100%;
+      padding-bottom: 120px;
+
+      h2 {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  @include responsive-phone-big {
+    background-color: $white;
+    box-shadow: 0 0 3px #999;
+    margin-bottom: 60px;
+
+    &__content {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 15px;
+    }
+
+    &__image img {
+      box-shadow: none;
+    }
+
+    .button {
+      bottom: 25px;
+      right: auto;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+}

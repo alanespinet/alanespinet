@@ -10,9 +10,7 @@ import './styles/styles.scss';
 
 const jsx = (
   <Provider store={store}>
-    <Router history={history}>
-      <Route to="/" component={App} exact={true} />
-    </Router>
+    <App />
   </Provider>
 );
 

@@ -1,0 +1,104 @@
+.portfolio {
+  min-height: 1000px;
+  background-color: $gray;
+  padding-bottom: 270px;
+
+  &__header {
+    height: 250px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include background-image;
+
+    &__overlay {
+      background-image: linear-gradient(to right bottom, darken(rgba($teal, .8), 10%), lighten(rgba($teal, .8), 10%));
+      @include full-absolute;
+    }
+
+    &__title-wrapper {
+      background-color: rgba( $white, .8 );
+      position: relative;
+      z-index: 100;
+      width: 580px;
+      height: 100px;
+      -moz-transform: skewX(-30deg);
+      -webkit-transform: skewX(-30deg);
+      transform: skewX(-30deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: '';
+        background-color: rgba( $white, .2 );
+        width: 580px;
+        height: 100px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      & > * {
+        -moz-transform: skewX(30deg);
+        -webkit-transform: skewX(30deg);
+        transform: skewX(30deg);
+      }
+    }
+
+    h1 {
+      position: relative;
+      z-index: 100;
+      color: $dark-gray;
+      font-weight: 300;
+      font-size: 5rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__projects-list {
+    padding-top: 80px;
+  }
+
+  &__back-link {
+    display: block;
+    text-align: center;
+    color: $teal;
+    font-size: 2.4rem;
+    margin-top: 140px;
+    transition: all .3s ease;
+
+    &:hover {
+      color: darken( $teal, 10% );
+    }
+  }
+
+  @include responsive-phone-big {
+  	&__header {
+      h1 {
+        font-size: 3rem;
+        color: $white;
+      }
+
+      &__title-wrapper {
+        background-color: transparent;
+        width: 300px;
+        -moz-transform: skewX(0);
+        -webkit-transform: skewX(0);
+        transform: skewX(0);
+
+        & > * {
+          -moz-transform: skewX(0);
+          -webkit-transform: skewX(0);
+          transform: skewX(0);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

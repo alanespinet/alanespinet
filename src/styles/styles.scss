@@ -1,4 +1,5 @@
 @import './mixins/Responsive';
+@import './mixins/Parts';
 @import './base/settings';
 @import './base/base';
 
@@ -11,3 +12,5 @@
 @import './components/PageTitle';
 @import './components/WorkContent';
 @import './components/WorkSection';
+@import './components/Portfolio';
+@import './components/Project';
