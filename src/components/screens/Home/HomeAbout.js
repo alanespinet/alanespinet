@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { loadParticles } from '../../../animations/components/AHomeAbout';
+import { connect } from 'react-redux';
 
 import Button from '../../common/Button';
+import SkillsBlock from './SkillsBlock';
 
 class HomeAbout extends Component {
 
@@ -36,14 +38,37 @@ class HomeAbout extends Component {
               </ul>
             </div>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis.</p>
+            <p>I consider myself a guy who always wants to have a higher knowledge about what I do. I enjoy a lot studying, investigating and learning every day new things related with my line of work, in order to grasp how to create new things, how to use new tools and frameworks and, of course, with the clear goal to provide the highest quality in every of my services. I am never afraid of any challenge. I understood a long time ago that there is no better way to improve your skills than pushing your own limits.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis.</p>
+            <p>Talking about skills, here is what I have to offer:</p>
 
-            <div className="home__about__content__button-wrapper">
-              <Button buttonColor="green" buttonOnClick={ () => { console.log('Button') } }>
-                Skill List
-              </Button>
+            <div className="home__about__skills-list">
+              <SkillsBlock
+                title="General Skills"
+                icon="globe"
+                skills={this.props.skills.general}
+              />
+
+              <SkillsBlock
+                title="Front-End Skills"
+                icon="css3"
+                skills={this.props.skills.front_end}
+                customClass="third-rendered third-rendered--first"
+              />
+
+              <SkillsBlock
+                title="Back-End Skills"
+                icon="database"
+                skills={this.props.skills.back_end}
+                customClass="third-rendered third-rendered--second"
+              />
+
+              <SkillsBlock
+                title="Video Games Skills"
+                icon="gamepad"
+                skills={this.props.skills.videogames}
+                customClass="third-rendered third-rendered--third"
+              />
             </div>
           </div>
         </div>
@@ -52,4 +77,8 @@ class HomeAbout extends Component {
   }
 }
 
-export default HomeAbout;
+const mapStateToProps = state => ({
+  skills: state.skills
+});
+
+export default connect(mapStateToProps)(HomeAbout);

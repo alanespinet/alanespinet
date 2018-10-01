@@ -18,6 +18,11 @@ class Header extends Component {
     }
   }
 
+  onMenuClose = () => {
+    this.setState({ menu_open: false });
+    menuOut();
+  }
+
   render(){
     return (
       <div className={ this.state.menu_open ? "header open" : "header" }>
@@ -32,13 +37,12 @@ class Header extends Component {
 
         <div className="header__options">
           <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/">Work</NavLink></li>
-            <li><NavLink to="/">Skills</NavLink></li>
-            <li><NavLink to="/">Articles</NavLink></li>
-            <li><NavLink to="/">Services</NavLink></li>
-            <li><NavLink to="/">About</NavLink></li>
-            <li><NavLink to="/">Contact</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/">Home</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/work">Work</NavLink></li>
+            {/* <li><NavLink onClick={this.onMenuClose} to="/">Articles</NavLink></li> */}
+            <li><NavLink onClick={this.onMenuClose} to="/">Services</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/">About</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/">Contact</NavLink></li>
           </ul>
         </div>
       </div>
