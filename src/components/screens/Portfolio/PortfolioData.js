@@ -7,6 +7,7 @@ const PortfolioData = props => (
     printedTitle = { props.portfolio.printedTitle }
     image = { props.portfolio.image }
     projects = { props.portfolio.projects }
+    special_note = { props.portfolio.special_note ? props.portfolio.special_note : null }
   />
 );
 

@@ -3,6 +3,7 @@ const defaultState = [
     name: 'webapplications',
     printedTitle: 'Web Applications',
     image: 'webapplicationshero.jpg',
+    special_note: 'NOTE: All projects listed under this category have been hosted on heroku.com using its free plan. This plan puts applications into \'sleep mode\', generating a small 3 to 5 seconds delay when loading.',
     projects: [{
       title: 'Reactive Restaurant',
       image: '/images/projects/listings/reactiverestaurant.jpg',
@@ -36,7 +37,35 @@ const defaultState = [
     name: 'websites',
     printedTitle: 'Websites',
     image: 'websiteshero.jpg',
-    projects: []
+    projects: [{
+      title: 'Ryder Trauma Center',
+      image: '/images/projects/listings/ryder.jpg',
+      description: 'Fully Responsive website created in order to celebrate Ryder Trauma Center\'s 25th Anniversary. Worked in this website as part of a team',
+      technologies: 'HTML5, CSS3, JavaScript (jQuery), PHP, Wordpress',
+      url_text: 'Live URL',
+      url: 'http://rydertraumacenter.org/'
+    }, {
+      title: 'The Reatreat Orlando Townhomes',
+      image: '/images/projects/listings/retreat.jpg',
+      description: 'Fully Responsive website. Worked in this website as part of a team',
+      technologies: 'HTML5, CSS3, JavaScript (jQuery), PHP, Wordpress',
+      url_text: 'Live URL',
+      url: 'http://retreat-orlando.com/'
+    }, {
+      title: 'The Designed Spaces',
+      image: '/images/projects/listings/designingspaces.jpg',
+      description: 'Fully Responsive website. Worked in this website as part of a team',
+      technologies: 'HTML5, CSS3, JavaScript (jQuery), PHP, Wordpress',
+      url_text: 'Live URL',
+      url: 'http://retreat-orlando.com/'
+    }, {
+      title: 'Century Of Miracles',
+      image: '/images/projects/listings/century.jpg',
+      description: 'Fully Responsive website created in order to celebrate Jackson\'s Hospital 100th Anniversary. WCAG 2.0 Compliant Website. Worked in this website as part of a team',
+      technologies: 'HTML5, CSS3, JavaScript (jQuery), PHP, Wordpress',
+      url_text: 'Live URL',
+      url: 'https://centuryofmiracles.org/'
+    }]
   }, {
     name: 'videogames',
     printedTitle: 'Video Games',

@@ -1,7 +1,13 @@
 .project {
   @include flex-sb-fs;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba( $dark-gray, .1 );
   position: relative;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &__image {
     flex-basis: 400px;
@@ -26,7 +32,7 @@
   .button {
     position: absolute;
     right: 25px;
-    bottom: 0;
+    bottom: 50px;
   }
 
   @include responsive-ds-short {
@@ -67,6 +73,7 @@
       padding-left: 15px;
       padding-right: 15px;
       padding-top: 15px;
+      padding-bottom: 90px;
     }
 
     &__image img {

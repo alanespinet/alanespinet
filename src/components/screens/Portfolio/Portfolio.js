@@ -13,6 +13,14 @@ class Portfolio extends Component {
           image={ this.props.image }
         />
 
+        { this.props.special_note &&
+          <div className="portfolio__special-note">
+            <div className="container">
+              <p>{ this.props.special_note }</p>
+            </div>
+          </div>
+        }
+
         <ProjectsList projectsList={ this.props.projects }/>
 
         <NavLink to="/work" className="portfolio__back-link">Back to 'My Work'</NavLink>

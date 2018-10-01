@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import { history } from '../App';
 
 // props:
 // type: "left" or "right": "left" = "image to the left"
@@ -12,6 +13,7 @@ class WorkSection extends Component {
 
   onButtonClick = e => {
     e.preventDefault();
+    history.push(this.props.route);
   }
 
   render(){
