@@ -41,11 +41,12 @@ app.post('/sendmail', (req, res, next) => {
 
   transport.sendMail(mailOptions, (error, info) => {
     if( error ){
-      return res.status(403).send('Message not sent');
+      res.status(403).send('Message not sent');
     }
   });
 
   res.send('Message sent');
+  res.end();
 });
 
 app.get('*', (req, res) => {
