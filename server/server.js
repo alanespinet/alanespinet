@@ -43,10 +43,10 @@ app.post('/sendmail', (req, res, next) => {
     if( error ){
       res.status(403).send('Message not sent');
     }
-  });
 
-  res.send('Message sent');
-  res.end();
+    res.send('Message sent');
+    res.end();
+  });
 });
 
 app.get('*', (req, res) => {
