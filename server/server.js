@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -9,6 +11,31 @@ const nm_password = process.env.NMPSWD;
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
+
+const oauth2Client = new OAuth2(
+     process.env.CLIENTID,
+     process.env.SECRET,
+     'https://developers.google.com/oauthplayground'
+);
+
+oauth2Client.setCredentials({
+     refresh_token: process.env.REFRESH_TOKEN
+});
+
+const accessToken = oauth2Client.refreshAccessToken()
+     .then(res => res.credentials.access_token);
+
+const smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+         type: "OAuth2",
+         user: "aelluvetaaportfolio@gmail.com",
+         clientId: process.env.CLIENTID,
+         clientSecret: process.env.SECRET,
+         refreshToken: process.env.REFRESH_TOKEN,
+         accessToken: accessToken
+    }
+});
 
 app.use( bodyParser.urlencoded({
   extended: true
@@ -24,14 +51,6 @@ app.post('/sendmail', (req, res, next) => {
   const email = req.body.email;
   const message = req.body.message;
 
-  const transport = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'aelluvetaaportfolio@gmail.com',
-      pass: nm_password
-    }
-  });
-
   const mailOptions = {
     from: 'aelluvetaaportfolio@gmail.com',
     to: 'aelluvetaa@gmail.com',
@@ -39,11 +58,12 @@ app.post('/sendmail', (req, res, next) => {
     html: '<p>Name: ' + name + ', phone: ' + phone + ', email: ' + email + ', message: ' + message + '.</p>'
   };
 
-  transport.sendMail(mailOptions, (error, info) => {
+  smtpTransport.sendMail(mailOptions, (error, info) => {
     if( error ){
       res.status(403).send(error);
     } else {
       res.send('Message sent');
+      smtpTransport.close();
     }
   });
 });
