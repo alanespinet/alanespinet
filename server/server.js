@@ -7,35 +7,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const port = process.env.PORT;
-const nm_password = process.env.NMPSWD;
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
-
-const oauth2Client = new OAuth2(
-     process.env.CLIENTID,
-     process.env.SECRET,
-     'https://developers.google.com/oauthplayground'
-);
-
-oauth2Client.setCredentials({
-     refresh_token: process.env.REFRESH_TOKEN
-});
-
-const accessToken = oauth2Client.refreshAccessToken()
-     .then(res => res.credentials.access_token);
-
-const smtpTransport = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-         type: "OAuth2",
-         user: "aelluvetaaportfolio@gmail.com",
-         clientId: process.env.CLIENTID,
-         clientSecret: process.env.SECRET,
-         refreshToken: process.env.REFRESH_TOKEN,
-         accessToken: accessToken
-    }
-});
 
 app.use( bodyParser.urlencoded({
   extended: true
@@ -50,6 +24,31 @@ app.post('/sendmail', (req, res, next) => {
   const phone = req.body.phone;
   const email = req.body.email;
   const message = req.body.message;
+
+  const oauth2Client = new OAuth2(
+       process.env.CLIENTID,
+       process.env.SECRET,
+       'https://developers.google.com/oauthplayground'
+  );
+
+  oauth2Client.setCredentials({
+       refresh_token: process.env.REFRESH_TOKEN
+  });
+
+  const accessToken = oauth2Client.refreshAccessToken()
+       .then(res => res.credentials.access_token);
+
+  const smtpTransport = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+           type: "OAuth2",
+           user: "aelluvetaaportfolio@gmail.com",
+           clientId: process.env.CLIENTID,
+           clientSecret: process.env.SECRET,
+           refreshToken: process.env.REFRESH_TOKEN,
+           accessToken: accessToken
+      }
+  });
 
   const mailOptions = {
     from: 'aelluvetaaportfolio@gmail.com',
