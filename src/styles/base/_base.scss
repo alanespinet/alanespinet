@@ -92,4 +92,19 @@ a {
   body {
     padding: 0;
   }
+
+  #g-recaptcha {
+    -moz-transform: scale(0.77) !important;
+    -webkit-transform: scale(0.77) !important;
+    transform: scale(0.77) !important;
+
+    position: absolute;
+    top: 0;
+    left: -13px;
+  }
+
+  .recaptcha-wrapper {
+    position: relative;
+    height: 70px;
+  }
 }

@@ -1,1 +1,1 @@
-export { setPropValue } from './quickContact';
+export { setPropValue, sendMail } from './quickContact';

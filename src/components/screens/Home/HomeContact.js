@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
+import Recaptcha from 'react-recaptcha';
 
 import store from '../../../redux/store/store';
 import Button from '../../common/Button';
 
 class HomeContact extends Component {
+  state = {
+    isVerified: false
+  };
+
   onChangeName(e){
     const value = e.target.value;
     this.props.setPropValue('name', value);
@@ -26,6 +31,16 @@ class HomeContact extends Component {
     this.props.setPropValue('message', value);
   }
 
+  recaptchaLoaded = () => {
+    return;
+  };
+
+  recaptchaVerified = response => {
+    if(response){
+      this.setState({ isVerified: true });
+    }
+  }
+
   onSend(e){
     e.preventDefault();
 
@@ -34,8 +49,12 @@ class HomeContact extends Component {
     const email = this.props.qc_email;
     const message = this.props.qc_message;
 
-    const data = { name, phone, email, message };
-    this.props.pSendMail(data);
+    if( this.state.isVerified ){
+      const data = { name, phone, email, message };
+      this.props.pSendMail(data);
+    } else {
+      alert('Please confir that you are a Human');
+    }
   }
 
   render(){
@@ -91,6 +110,17 @@ class HomeContact extends Component {
                 </div>
               </div>
 
+              <div className="home__contact__control-row">
+                <div className="home__contact__control-row__control-col home__contact__control-row__control-col--full recaptcha-wrapper">
+                  <Recaptcha
+                    sitekey="6LdK4jkUAAAAAMoT0eHPPGGDhl5PhdqUxeHEDKIc"
+                    render="explicit"
+                    onloadCallback={this.recaptchaLoaded}
+                    verifyCallback={this.recaptchaVerified}
+                  />
+                </div>
+              </div>
+
               <div className="home__contact__button-wrapper">
                 <Button
                   buttonColor="green"
@@ -116,7 +146,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setPropValue: (prop, value) => dispatch( actions.setPropValue(prop, value) ),
-  pSendMail: mail_data => dispatch( actions.sendMail(mail_data) )
+  pSendMail: (mail_data) => dispatch( actions.sendMail(mail_data) )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContact);
