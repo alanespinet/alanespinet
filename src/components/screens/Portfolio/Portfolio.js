@@ -23,7 +23,7 @@ class Portfolio extends Component {
 
         <ProjectsList projectsList={ this.props.projects }/>
 
-        <NavLink to="/work" className="portfolio__back-link">Back to 'My Work'</NavLink>
+        <NavLink to="/work" className="portfolio__back-link">My Work</NavLink>
       </div>
     );
   }

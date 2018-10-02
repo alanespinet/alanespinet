@@ -28,12 +28,19 @@ class HomeContact extends Component {
 
   onSend(e){
     e.preventDefault();
-    console.log('click');
+
+    const name = this.props.qc_name;
+    const phone = this.props.qc_phone;
+    const email = this.props.qc_email;
+    const message = this.props.qc_message;
+
+    const data = { name, phone, email, message };
+    this.props.pSendMail(data);
   }
 
   render(){
     return (
-      <div className="home__contact">
+      <div className="home__contact" id="home__contact-us">
         <div className="container">
           <div className="home__contact__form-wrapper">
             <h2>Write me a message</h2>
@@ -108,7 +115,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPropValue: (prop, value) => dispatch( actions.setPropValue(prop, value) )
+  setPropValue: (prop, value) => dispatch( actions.setPropValue(prop, value) ),
+  pSendMail: mail_data => dispatch( actions.sendMail(mail_data) )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContact);

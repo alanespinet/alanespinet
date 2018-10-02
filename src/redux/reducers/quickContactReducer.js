@@ -12,7 +12,11 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         [action.payload.prop]: action.payload.value
-      }
+      };
+
+    case 'CLEAR_CONTACT_DATA':
+      return defaultState;
+    
     default:
       return state;
   }
