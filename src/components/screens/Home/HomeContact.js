@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
 import Recaptcha from 'react-recaptcha';
-import axios from 'axios';
 
 import store from '../../../redux/store/store';
 import Button from '../../common/Button';
@@ -39,9 +38,6 @@ class HomeContact extends Component {
   recaptchaVerified = response => {
     if(response){
       this.setState({ isVerified: true });
-
-      axios.post('https://alanespinet.herokuapp.com/captcha_validate', { resp: response })
-        .then( r => console.log(r) );
     }
   }
 

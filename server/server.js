@@ -5,7 +5,6 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const request = require('request');
 
 const port = process.env.PORT;
 
@@ -19,23 +18,6 @@ app.use( bodyParser.urlencoded({
 app.use( bodyParser.json() );
 app.use( cors() );
 app.use( express.static(publicPath) );
-
-app.post('/captcha_validate', (req, res, next) => {
-  const resp = req.body.res;
-  const sec = process.env.GOOGLE_REC;
-
-  request.post('https://www.google.com/recaptcha/api/siteverify', {
-    json: {
-      secret: sec,
-      response: resp
-    },
-    function( error, response, body ){
-      if (!error && response.statusCode == 200) {
-        res.send(body);
-      }
-    }
-  })
-});
 
 app.post('/sendmail', (req, res, next) => {
   const name = req.body.name;
