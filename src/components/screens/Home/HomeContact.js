@@ -38,16 +38,11 @@ class HomeContact extends Component {
 
   recaptchaVerified = response => {
     if(response){
-      console.log(response);
       this.setState({ isVerified: true });
-    }
 
-    axios.post('https://www.google.com/recaptcha/api/siteverify', {
-      secret: process.env.GOOGLE_REC,
-      response: response
-    })
-      .then( res => console.log(res) )
-      .catch( error => console.log(error) );
+      axios.post('https://alanespinet.herokuapp.com/captcha_validate', { resp: response })
+        .then( r => console.log(r) );
+    }
   }
 
   onSend(e){
