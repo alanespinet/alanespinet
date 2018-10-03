@@ -31,7 +31,7 @@ app.post('/captcha_validate', (req, res, next) => {
     },
     function( error, response, body ){
       if (!error && response.statusCode == 200) {
-        console.log(body)
+        res.send(body);
       }
     }
   })
