@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
 import Recaptcha from 'react-recaptcha';
+import axios from 'axios';
 
 import store from '../../../redux/store/store';
 import Button from '../../common/Button';
@@ -39,6 +40,8 @@ class HomeContact extends Component {
     if(response){
       this.setState({ isVerified: true });
     }
+
+    // const secret = process.env.GOOGLE_REC;
   }
 
   onSend(e){
@@ -58,6 +61,8 @@ class HomeContact extends Component {
   }
 
   render(){
+    console.log(process.env.GOOGLE_REC);
+
     return (
       <div className="home__contact" id="home__contact-us">
         <div className="container">
