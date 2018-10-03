@@ -38,10 +38,16 @@ class HomeContact extends Component {
 
   recaptchaVerified = response => {
     if(response){
+      console.log(response);
       this.setState({ isVerified: true });
     }
 
-    // const secret = process.env.GOOGLE_REC;
+    axios.post('https://www.google.com/recaptcha/api/siteverify', {
+      secret: process.env.GOOGLE_REC,
+      response: response
+    })
+      .then( res => console.log(res) )
+      .catch( error => console.log(error) );
   }
 
   onSend(e){
@@ -61,8 +67,6 @@ class HomeContact extends Component {
   }
 
   render(){
-    console.log(process.env.GOOGLE_REC);
-
     return (
       <div className="home__contact" id="home__contact-us">
         <div className="container">

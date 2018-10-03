@@ -1,7 +1,15 @@
 const path = require('path');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
+  const envs = dotenv.config().parsed;
+
+  const envKeys = Object.keys(envs).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(envs[next]);
+    return prev;
+  }, {});
 
   return {
     entry: './src/app.js',
@@ -23,6 +31,9 @@ module.exports = (env) => {
         ]
       }]
     },
+    plugins: [
+      new webpack.DefinePlugin(envKeys)
+    ],
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
