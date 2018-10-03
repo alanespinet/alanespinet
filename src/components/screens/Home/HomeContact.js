@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
-import Recaptcha from 'react-recaptcha';
+// import Recaptcha from 'react-recaptcha';
 
 import store from '../../../redux/store/store';
 import Button from '../../common/Button';
@@ -112,12 +112,12 @@ class HomeContact extends Component {
 
               <div className="home__contact__control-row">
                 <div className="home__contact__control-row__control-col home__contact__control-row__control-col--full recaptcha-wrapper">
-                  <Recaptcha
+                  {/* <Recaptcha
                     sitekey="6LdK4jkUAAAAAMoT0eHPPGGDhl5PhdqUxeHEDKIc"
                     render="explicit"
                     onloadCallback={this.recaptchaLoaded}
                     verifyCallback={this.recaptchaVerified}
-                  />
+                  /> */}
                 </div>
               </div>
 
