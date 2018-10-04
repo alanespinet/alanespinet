@@ -3,7 +3,8 @@ const defaultState = {
   phone: '',
   email: '',
   message: '',
-  error: ''
+  error: '',
+  sending: false
 };
 
 export default (state = defaultState, action) => {
@@ -14,9 +15,15 @@ export default (state = defaultState, action) => {
         [action.payload.prop]: action.payload.value
       };
 
+    case 'SET_SENDING':
+      return {
+        ...state,
+        sending: action.payload
+      };
+
     case 'CLEAR_CONTACT_DATA':
       return defaultState;
-    
+
     default:
       return state;
   }

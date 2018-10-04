@@ -38,9 +38,10 @@ class Header extends Component {
         <div className="header__options">
           <ul>
             <li><NavLink onClick={this.onMenuClose} to="/">Home</NavLink></li>
+            <li><a onClick={this.onMenuClose} href="/#home__about">About</a></li>
             <li><NavLink onClick={this.onMenuClose} to="/work">Work</NavLink></li>
-            <li><NavLink onClick={this.onMenuClose} to="/">Articles</NavLink></li>
-            <li><NavLink onClick={this.onMenuClose} to="/">Services</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/articles">Articles</NavLink></li>
+            <li><NavLink onClick={this.onMenuClose} to="/services">Services</NavLink></li>
             <li><a onClick={this.onMenuClose} href="/#home__contact-us">Contact</a></li>
           </ul>
         </div>

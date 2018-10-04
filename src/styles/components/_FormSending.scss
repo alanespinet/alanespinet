@@ -1,0 +1,31 @@
+.form-sending {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba( $white, .9 );
+  z-index: 100000;
+  
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    text-align: center;
+
+    i {
+      font-size: 6rem;
+    }
+
+    p {
+      font-size: 2.4rem;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  &.sending {
+    display: flex;
+  }
+}

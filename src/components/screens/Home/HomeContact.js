@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
-// import Recaptcha from 'react-recaptcha';
 
 import store from '../../../redux/store/store';
 import Button from '../../common/Button';
+import FormSending from './FormSending';
 
 class HomeContact extends Component {
-  state = {
-    isVerified: false
-  };
-
   onChangeName(e){
     const value = e.target.value;
     this.props.setPropValue('name', value);
@@ -31,35 +27,24 @@ class HomeContact extends Component {
     this.props.setPropValue('message', value);
   }
 
-  recaptchaLoaded = () => {
-    return;
-  };
-
-  recaptchaVerified = response => {
-    if(response){
-      this.setState({ isVerified: true });
-    }
-  }
-
   onSend(e){
     e.preventDefault();
+    this.props.pSetSending(true);
 
     const name = this.props.qc_name;
     const phone = this.props.qc_phone;
     const email = this.props.qc_email;
     const message = this.props.qc_message;
 
-    if( this.state.isVerified ){
-      const data = { name, phone, email, message };
-      this.props.pSendMail(data);
-    } else {
-      alert('Please confir that you are a Human');
-    }
+    const data = { name, phone, email, message };
+    this.props.pSendMail(data);
   }
 
   render(){
     return (
       <div className="home__contact" id="home__contact-us">
+        <FormSending sending={ this.props.qc_sending }/>
+
         <div className="container">
           <div className="home__contact__form-wrapper">
             <h2>Write me a message</h2>
@@ -112,12 +97,7 @@ class HomeContact extends Component {
 
               <div className="home__contact__control-row">
                 <div className="home__contact__control-row__control-col home__contact__control-row__control-col--full recaptcha-wrapper">
-                  {/* <Recaptcha
-                    sitekey="6LdK4jkUAAAAAMoT0eHPPGGDhl5PhdqUxeHEDKIc"
-                    render="explicit"
-                    onloadCallback={this.recaptchaLoaded}
-                    verifyCallback={this.recaptchaVerified}
-                  /> */}
+
                 </div>
               </div>
 
@@ -141,12 +121,14 @@ const mapStateToProps = state => ({
   qc_name: state.quickContact.name,
   qc_phone: state.quickContact.phone,
   qc_email: state.quickContact.email,
-  qc_message: state.quickContact.message
+  qc_message: state.quickContact.message,
+  qc_sending: state.quickContact.sending
 });
 
 const mapDispatchToProps = dispatch => ({
   setPropValue: (prop, value) => dispatch( actions.setPropValue(prop, value) ),
-  pSendMail: (mail_data) => dispatch( actions.sendMail(mail_data) )
+  pSendMail: (mail_data) => dispatch( actions.sendMail(mail_data) ),
+  pSetSending: (sending) => dispatch( actions.setSending(sending) )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContact);

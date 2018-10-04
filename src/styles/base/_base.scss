@@ -88,6 +88,18 @@ a {
   position: relative;
 }
 
+.logo-image-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
 @include responsive-phone-big {
   body {
     padding: 0;
