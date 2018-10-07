@@ -5,6 +5,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import Home from './screens/Home';
 import Work from './screens/Work';
 import Services from './screens/Services';
+import Articles from './screens/Articles';
 
 
 import PageNotFound from './screens/PageNotFound';
