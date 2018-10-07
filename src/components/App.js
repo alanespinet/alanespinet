@@ -31,7 +31,7 @@ export default class App extends React.Component {
               <Route exact path="/work/websites" component={PortfolioData} />
               <Route exact path="/work/videogames" component={PortfolioData} />
               <Route path="/work" component={Work} />
-              {/* <Route path="/articles" component={Articles} /> */}
+              <Route path="/articles" component={Articles} />
               <Route path="/services" component={Services} />
               <Route component={PageNotFound} />
             </Switch>
