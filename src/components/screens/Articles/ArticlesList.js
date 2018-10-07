@@ -12,7 +12,7 @@ class ArticlesList extends Component {
           </div>
         ) : (
           <div className="articles-list__empty">
-            <h2><span>Sorry.</span> There is no Article to show right now. Articles will be available <span>very soon.</span></h2>
+            <h2><span>Sorry.</span> There is no Article to show right now. Articles will be available <span>very soon!</span></h2>
           </div>
         )}
       </div>
