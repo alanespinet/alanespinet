@@ -4,6 +4,7 @@ import quickContactReducer from './quickContactReducer';
 import portfoliosReducer from './portfoliosReducer';
 import skillsReducer from './skillsReducer';
 import servicesReducer from './servicesReducer';
+import articlesReducer from './articlesReducer';
 
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
   quickContact: quickContactReducer,
   portfolios: portfoliosReducer,
   skills: skillsReducer,
-  services: servicesReducer
+  services: servicesReducer,
+  articles: articlesReducer
 });

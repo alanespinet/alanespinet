@@ -1,0 +1,12 @@
+.articles-list {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__empty {
+    h2 {
+      span {
+        color: $teal;
+      }
+    }
+  }
+}

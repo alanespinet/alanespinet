@@ -25,6 +25,7 @@
     "live-server": "^1.2.0",
     "node-sass": "^4.9.0",
     "nodemailer": "^4.6.8",
+    "nodemon": "^1.18.4",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.0.0",
@@ -46,6 +47,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
+    "run": "nodemon --exec yarn run dev-server",
     "heroku-postbuild": "yarn run build:prod"
   }
 }
