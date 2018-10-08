@@ -7,6 +7,10 @@
       span {
         color: $teal;
       }
+
+      @include responsive-phone-big {
+        font-size: 2.4rem;
+      }
     }
   }
 }
