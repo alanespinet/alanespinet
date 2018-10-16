@@ -67,6 +67,10 @@ app.post('/sendmail', (req, res, next) => {
   });
 });
 
+app.get('/about', (req, res, next) => {
+  res.redirect('/');
+});
+
 app.get('*', (req, res) => {
   res.sendFile( path.join(publicPath, 'index.html') );
 });
