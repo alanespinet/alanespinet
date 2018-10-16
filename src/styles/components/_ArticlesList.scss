@@ -3,6 +3,8 @@
   padding-bottom: 60px;
 
   &__empty {
+    min-height: 600px;
+
     h2 {
       span {
         color: $teal;
