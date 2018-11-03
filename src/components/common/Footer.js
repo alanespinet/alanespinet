@@ -19,7 +19,7 @@ const Footer = () => (
           </div>
 
           <div className="footer__front__content__right">
-            <a href="#">acknowledgments</a>
+            {/* <a href="#">acknowledgments</a> */}
           </div>
         </div>
       </div>

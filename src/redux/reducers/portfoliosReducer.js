@@ -52,6 +52,13 @@ const defaultState = [
       url_text: 'Live URL',
       url: 'http://retreat-orlando.com/'
     }, {
+      title: 'Florida Yachts International',
+      image: '/images/projects/listings/fyi.jpg',
+      description: 'Fully Responsive website. Worked in this website as part of a team',
+      technologies: 'HTML5, CSS3, JavaScript (jQuery), PHP, Wordpress',
+      url_text: 'Live URL',
+      url: 'https://fyiyachts.com/'
+    }, {
       title: 'The Designed Spaces',
       image: '/images/projects/listings/designingspaces.jpg',
       description: 'Fully Responsive website. Worked in this website as part of a team',
