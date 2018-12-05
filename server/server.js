@@ -77,7 +77,6 @@ app.get('/about', (req, res, next) => {
 // });
 
 app.get('*', (req, res) => {
-  res.redirect('https://' + req.headers.host + req.url);
   res.sendFile( path.join(publicPath, 'index.html') );
 });
 
