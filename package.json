@@ -53,6 +53,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
+    "start:w": "nodemon server/server.js",
     "run": "nodemon --exec yarn run dev-server",
     "heroku-postbuild": "yarn run build:prod"
   }
