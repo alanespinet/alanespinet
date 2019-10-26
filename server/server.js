@@ -19,58 +19,60 @@ app.use( bodyParser.json() );
 app.use( cors() );
 app.use( express.static(publicPath) );
 
-const requireHTTPS = (req, res, next) => {
-    return res.redirect('https://' + req.get('host') + req.url);
-}
+// const requireHTTPS = (req, res, next) => {
+//     return res.redirect('https://' + req.get('host') + req.url);
+// }
 
-app.use(requireHTTPS);
+// app.use(requireHTTPS);
 
 app.post('/sendmail', (req, res, next) => {
-  const name = req.body.name;
-  const phone = req.body.phone;
-  const email = req.body.email;
-  const message = req.body.message;
+  // const name = req.body.name;
+  // const phone = req.body.phone;
+  // const email = req.body.email;
+  // const message = req.body.message;
 
-  const oauth2Client = new OAuth2(
-       process.env.CLIENTID,
-       process.env.SECRET,
-       'https://developers.google.com/oauthplayground'
-  );
+  // const oauth2Client = new OAuth2(
+  //      process.env.CLIENTID,
+  //      process.env.SECRET,
+  //      'https://developers.google.com/oauthplayground'
+  // );
 
-  oauth2Client.setCredentials({
-       refresh_token: process.env.REFRESH_TOKEN
-  });
+  // oauth2Client.setCredentials({
+  //      refresh_token: process.env.REFRESH_TOKEN
+  // });
 
-  const accessToken = oauth2Client.refreshAccessToken()
-       .then(res => res.credentials.access_token);
+  // const accessToken = oauth2Client.refreshAccessToken()
+  //      .then(res => res.credentials.access_token);
 
-  const smtpTransport = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-           type: "OAuth2",
-           user: "aelluvetaaportfolio@gmail.com",
-           clientId: process.env.CLIENTID,
-           clientSecret: process.env.SECRET,
-           refreshToken: process.env.REFRESH_TOKEN,
-           accessToken: accessToken
-      }
-  });
+  // const smtpTransport = nodemailer.createTransport({
+  //     service: "gmail",
+  //     auth: {
+  //          type: "OAuth2",
+  //          user: "aelluvetaaportfolio@gmail.com",
+  //          clientId: process.env.CLIENTID,
+  //          clientSecret: process.env.SECRET,
+  //          refreshToken: process.env.REFRESH_TOKEN,
+  //          accessToken: accessToken
+  //     }
+  // });
 
-  const mailOptions = {
-    from: 'aelluvetaaportfolio@gmail.com',
-    to: 'aelluvetaa@gmail.com',
-    subject: 'Portfolio Contact',
-    html: '<p>Name: ' + name + ', phone: ' + phone + ', email: ' + email + ', message: ' + message + '.</p>'
-  };
+  // const mailOptions = {
+  //   from: 'aelluvetaaportfolio@gmail.com',
+  //   to: 'aelluvetaa@gmail.com',
+  //   subject: 'Portfolio Contact',
+  //   html: '<p>Name: ' + name + ', phone: ' + phone + ', email: ' + email + ', message: ' + message + '.</p>'
+  // };
 
-  smtpTransport.sendMail(mailOptions, (error, info) => {
-    if( error ){
-      res.status(403).send(error);
-    } else {
-      res.send('Message sent');
-      smtpTransport.close();
-    }
-  });
+  // smtpTransport.sendMail(mailOptions, (error, info) => {
+  //   if( error ){
+  //     res.status(403).send(error);
+  //   } else {
+  //     res.send('Message sent');
+  //     smtpTransport.close();
+  //   }
+  // });
+
+  return;
 });
 
 app.get('/about', (req, res, next) => {
