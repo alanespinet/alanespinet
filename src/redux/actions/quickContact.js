@@ -7,7 +7,7 @@ export const setPropValue = (prop, value) => ({
 
 export const sendMail = mail_data => {
   return dispatch => {
-    return axios.post('http://alanespinet.herokuapp.com/sendmail', mail_data)
+    return axios.post('https://alanespinet.herokuapp.com/sendmail', mail_data)
       .then(() => {
         dispatch( setSending(false) );
         dispatch( clearContactData() );
