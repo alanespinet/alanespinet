@@ -19,15 +19,11 @@ app.use( bodyParser.json() );
 app.use( cors() );
 app.use( express.static(publicPath) );
 
-// const requireHTTPS = (req, res, next) => {
-//   if (!req.secure) {
-//     //FYI this should work for local development as well
-//     return res.redirect('https://' + req.get('host') + req.url);
-//   }
-//   next();
-// }
+const requireHTTPS = (req, res, next) => {
+    return res.redirect('https://' + req.get('host') + req.url);
+}
 
-// app.use(requireHTTPS);
+app.use(requireHTTPS);
 
 app.post('/sendmail', (req, res, next) => {
   const name = req.body.name;
