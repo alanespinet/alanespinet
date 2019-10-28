@@ -17,8 +17,8 @@ const defaultState = {
     'Bootstrap'
   ],
   back_end: [
-    'Node.js',
-    'Express.js',
+    'Node.js and Express.js',
+    'GraphQL',
     'MongoDB and Mongoose',
     'Firebase',
     'PHP',
