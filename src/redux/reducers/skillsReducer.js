@@ -11,7 +11,7 @@ const defaultState = {
     'HTML5',
     'CSS3',
     'SASS',
-    'JavaScript (includes ES6)',
+    'JavaScript (with ES6 and ES7)',
     'React.js',
     'jQuery',
     'Bootstrap'
