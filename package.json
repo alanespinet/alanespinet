@@ -24,7 +24,7 @@
     "history": "^4.7.2",
     "live-server": "^1.2.0",
     "node-sass": "^4.9.4",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.18.4",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
